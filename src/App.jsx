@@ -1310,42 +1310,160 @@ export default function App() {
             </div>
           </div>
         )}
+        {/* ================= PROFESSIONAL WORKING FOOTER ================= */}
+        <footer className="mt-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black border-t border-gray-800 pt-14 pb-8">
+          <div className="max-w-7xl mx-auto px-6">
+            {/* Top Section */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+              {/* Brand */}
+              <div>
+                <h3
+                  onClick={() => {
+                    setActiveTab("dashboard");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                  className="text-2xl font-bold text-white mb-4 flex items-center gap-2 cursor-pointer hover:text-blue-400 transition"
+                >
+                  <Cpu className="w-6 h-6 text-blue-500 animate-pulse" />
+                  JavaPath <span className="text-blue-500">Pro</span>
+                </h3>
+
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                  Structured roadmap to master Java Full Stack Development.
+                  Build real-world projects and grow like a professional
+                  engineer.
+                </p>
+
+                <div className="flex gap-3">
+                  <span className="px-3 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full">
+                    React
+                  </span>
+                  <span className="px-3 py-1 bg-green-600/20 text-green-400 text-xs rounded-full">
+                    Node.js
+                  </span>
+                  <span className="px-3 py-1 bg-purple-600/20 text-purple-400 text-xs rounded-full">
+                    Java
+                  </span>
+                </div>
+              </div>
+
+              {/* Navigation */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-300 mb-4 uppercase tracking-wider">
+                  Navigation
+                </h4>
+
+                <ul className="space-y-3 text-sm">
+                  {[
+                    { name: "Dashboard", tab: "dashboard" },
+                    { name: "Roadmap", tab: "roadmap" },
+                    { name: "Projects", tab: "projects" },
+                    { name: "Goals", tab: "goals" },
+                  ].map((item) => (
+                    <li
+                      key={item.tab}
+                      onClick={() => {
+                        setActiveTab(item.tab);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className={`cursor-pointer flex items-center gap-2 transition duration-300 group
+                ${activeTab === item.tab ? "text-blue-400" : "text-gray-400 hover:text-blue-400"}`}
+                    >
+                      <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-blue-400 transition" />
+                      {item.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Resources */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-300 mb-4 uppercase tracking-wider">
+                  Resources
+                </h4>
+
+                <ul className="space-y-3 text-sm text-gray-400">
+                  <li
+                    onClick={() => {
+                      setActiveTab("roadmap");
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="hover:text-green-400 transition cursor-pointer flex items-center gap-2"
+                  >
+                    <BookOpen className="w-4 h-4 text-green-500" />
+                    Documentation
+                  </li>
+
+                  <li
+                    onClick={() => {
+                      setActiveTab("projects");
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="hover:text-yellow-400 transition cursor-pointer flex items-center gap-2"
+                  >
+                    <Rocket className="w-4 h-4 text-yellow-500" />
+                    Build Projects
+                  </li>
+
+                  <li
+                    onClick={() => {
+                      setActiveTab("goals");
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="hover:text-purple-400 transition cursor-pointer flex items-center gap-2"
+                  >
+                    <Target className="w-4 h-4 text-purple-500" />
+                    Set Goals
+                  </li>
+                </ul>
+              </div>
+
+              {/* Social */}
+              <div>
+                <h4 className="text-sm font-semibold text-gray-300 mb-4 uppercase tracking-wider">
+                  Connect
+                </h4>
+
+                <div className="flex gap-4">
+                  <a
+                    href="https://github.com/thepritampatil"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-800 rounded-xl hover:bg-blue-600 transition transform hover:scale-110 duration-300"
+                  >
+                    <Github className="w-5 h-5 text-gray-300 hover:text-white" />
+                  </a>
+
+                  <a
+                    href="https://linkedin.com/in/thepritampatil"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-800 rounded-xl hover:bg-blue-500 transition transform hover:scale-110 duration-300"
+                  >
+                    <ExternalLink className="w-5 h-5 text-gray-300 hover:text-white" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Section */}
+            <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+              <div>
+                © {new Date().getFullYear()} JavaPath Pro. All rights reserved.
+              </div>
+
+              <div className="mt-3 md:mt-0 flex items-center gap-1">
+                Developed with
+                <span className="text-red-500 animate-pulse">❤️</span>
+                by
+                <span className="text-blue-500 font-semibold ml-1">
+                  Pritam Patil
+                </span>
+              </div>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
 }
-{
-  /* Footer */
-}
-<footer className="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-  <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-    <div>© {new Date().getFullYear()} JavaPath Pro. All rights reserved.</div>
-
-    <div className="flex items-center gap-4">
-      <a
-        href="https://github.com/thepritampatil"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-white transition-colors flex items-center gap-1"
-      >
-        <Github className="w-4 h-4" />
-        GitHub
-      </a>
-
-      <a
-        href="https://linkedin.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-white transition-colors flex items-center gap-1"
-      >
-        <ExternalLink className="w-4 h-4" />
-        LinkedIn
-      </a>
-    </div>
-  </div>
-
-  <div className="mt-4 text-xs text-gray-600">
-    Developed by{"❤️ by Pritam Patil"}
-    <span className="text-blue-500 font-semibold">Pritam Patil</span>
-  </div>
-</footer>;
